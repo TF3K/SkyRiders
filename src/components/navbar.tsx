@@ -8,6 +8,9 @@ export default function NavBar(){
     const {theme} = useTheme();
 
     const logoSwitcher = () =>{
+        // theme === "light"
+        //  ? return Image(BlackMode)
+        //  : return Image(WhiteMode)
         switch (theme){
             case "light":
                 return <Image src={"/logo_variants/mono_black.png"} alt="" height={75} width={150} />
@@ -23,7 +26,7 @@ export default function NavBar(){
             <div className="flex flex-col order-1 justify-center items-center">
                 <Link href={"/"}>
                     {logoSwitcher()}
-                    <h1 className="text-2xl tracking-wide font-black">SkyRiders</h1>
+                    <h1 className="text-2xl tracking-wide font-black text-center">SkyRiders</h1>
                 </Link>
             </div>
             <ul className="flex order-2 font-semibold text-xl justify-center items-center space-x-4">
@@ -33,12 +36,12 @@ export default function NavBar(){
                     </Link>
                 </li>
                 <li>
-                    <Link href={"#"}>
+                    <Link href={"/"}>
                         About
                     </Link>
                 </li>
                 <li>
-                    <Link href={"#"}>
+                    <Link href={"/shop"}>
                         Shop
                     </Link>
                 </li>

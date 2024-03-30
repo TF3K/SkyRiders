@@ -3,7 +3,13 @@ import useTypewriter from "react-typewriter-hook"
 import {useState, useEffect, useRef} from 'react';
 
 export default function Hero(){
-    const [texts] = useState<string[]>([]);
+    const [texts] = useState<string[]>([
+        "Embrace the moment.",
+        "Seize the opportunity.",
+        "Make memories.",
+        "Cherish the experience.",
+        "Treasure the journey."
+    ]);
     const [index,setIndex] = useState<number>(0);
     const intervalRef = useRef<NodeJS.Timeout|null>(null);
     useEffect(() =>{
