@@ -2,7 +2,7 @@
 import useTypewriter from "react-typewriter-hook"
 import {useState, useEffect, useRef} from 'react';
 
-export default function Hero(){
+export function Hero(){
     const [texts] = useState<string[]>([
         "Embrace the moment.",
         "Seize the opportunity.",

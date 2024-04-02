@@ -12,6 +12,7 @@ import { Social } from "./social";
 
 interface CardWrapperProps{
     children: React.ReactNode;
+    headerTitle: string;
     headerLabel: string;
     backButtonLabel: string;
     backButtonHref: string;
@@ -20,6 +21,7 @@ interface CardWrapperProps{
 
 export function CardWrapper({
     children,
+    headerTitle,
     headerLabel,
     backButtonLabel,
     backButtonHref,
@@ -28,7 +30,7 @@ export function CardWrapper({
     return(
         <Card className="w-[25rem] shadow-lg">
             <CardHeader>
-                <Header label={headerLabel}/>
+                <Header title={headerTitle} label={headerLabel}/>
             </CardHeader>
             <CardContent>
                 {children}

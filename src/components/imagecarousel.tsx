@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image"
 
-export default function ImageCarousel(){
+export function ImageCarousel(){
     return (
         <Carousel className="w-[32rem]">
             <CarouselContent>

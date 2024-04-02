@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "./theme/theme-switch";
 
-export default function NavBar(){
+export function NavBar(){
     const {theme} = useTheme();
 
     const logoSwitcher = () =>{

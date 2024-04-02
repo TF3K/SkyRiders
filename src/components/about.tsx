@@ -1,6 +1,6 @@
-import ImageCarousel from '@/components/imagecarousel'
+import { ImageCarousel } from '@/components/imagecarousel'
 
-export default function About(){
+export function About(){
         return(
             <div className="flex justify-center items-center w-full mt-72">
                 <div className="flex justify-between items-center w-[90%] px-48">

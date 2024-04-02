@@ -7,11 +7,13 @@ const font = Poppins({
 });
 
 interface HeaderProps{
+    title: string;
     label: string;
 }
 
 export function Header({
-    label
+    label,
+    title,
 }:HeaderProps){
     return(
         <div className="w-full flex flex-col justify-center items-center gap-y-4">
@@ -19,7 +21,7 @@ export function Header({
                 "text-3xl font-semibold",
                 font.className
             )}>
-                Auth
+                {title}
             </h1>
             <p className="text-muted-foreground text-sm">
                 {label}

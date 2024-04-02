@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook,faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-export default function Footer(){
+export function Footer(){
     const {theme} = useTheme();
 
     const logoSwitcher = () =>{
