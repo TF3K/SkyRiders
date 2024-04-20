@@ -1,10 +1,12 @@
 "use client"
+
 import * as z from "zod"
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { LoginSchema } from "@/schemas";
 import { useForm } from "react-hook-form";
 import { CardWrapper } from "./card-wrapper";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation";
 import {
     Form,
     FormControl,
@@ -19,6 +21,7 @@ import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
 import { login } from "../../../actions/login";
 export function LoginForm(){
+    const r = useRouter()
     const [error,setError] = useState<string | undefined>("");
     const [success,setSuccess] = useState<string | undefined>("");
     const [isPending,startTransition] = useTransition();
@@ -49,7 +52,7 @@ export function LoginForm(){
             headerTitle="Login"
             headerLabel="Welcome Back"
             backButtonLabel="Don't have an account ?"
-            backButtonHref="/auth/register"
+            backButtonHref="/api/auth/register"
             showSocial
         >
             <Form {...form}>

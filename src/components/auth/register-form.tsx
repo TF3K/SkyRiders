@@ -28,7 +28,7 @@ export function RegisterForm(){
         defaultValues: {
             email: "",
             password: "",
-            name:"",
+            fullname:""
         },
     });
 
@@ -50,8 +50,8 @@ export function RegisterForm(){
             headerTitle="Register"
             headerLabel="Create an account"
             backButtonLabel="Already have an account ?"
-            backButtonHref="/auth/login"
-            showSocial
+            backButtonHref="/api/auth/login"
+            showSocial={false}
         >
             <Form {...form}>
                 <form 
@@ -59,6 +59,25 @@ export function RegisterForm(){
                     className="space-y-6"
                 >
                     <div className="space-y-4">
+                        <FormField 
+                            control={form.control}
+                            name="fullname"
+                            render={({field}) => (
+                                <FormItem>
+                                    <FormLabel>
+                                        Full Name
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input 
+                                            {...field}
+                                            disabled={isPending}
+                                            placeholder="John Doe"
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <FormField 
                             control={form.control}
                             name="email"
@@ -92,25 +111,6 @@ export function RegisterForm(){
                                             {...field}
                                             disabled={isPending}
                                             type="password"
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                         <FormField 
-                            control={form.control}
-                            name="name"
-                            render={({field}) => (
-                                <FormItem>
-                                    <FormLabel>
-                                        Name
-                                    </FormLabel>
-                                    <FormControl>
-                                        <Input 
-                                            {...field}
-                                            disabled={isPending}
-                                            placeholder="John Doe"
                                         />
                                     </FormControl>
                                     <FormMessage />
