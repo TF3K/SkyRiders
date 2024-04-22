@@ -2,7 +2,6 @@ import { FaExclamationTriangle } from "react-icons/fa";
 
 interface FormErrorProps{
     message?:string;
-
 }
 
 export function FormError({message}:FormErrorProps){

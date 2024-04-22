@@ -46,7 +46,7 @@ export function NavBar(){
                     </Link>
                 </li>
                 <li>
-                    <Link href={"/api/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
+                    <Link href={"/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
                         Login
                     </Link>
                 </li>
