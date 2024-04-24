@@ -1,15 +1,13 @@
 "use client"
 
-import { SessionProvider, useSession } from "next-auth/react";
+import { ShopNavbar } from "@/components/shop/shop-navbar";
+import { SessionProvider } from "next-auth/react";
 
-export default function ShopLayout({children}:{children:React.ReactNode}){
-    const session = useSession();
-
+export default function ShopLayout({children}: {children: React.ReactNode}){
     return (
         <SessionProvider>
-            <div>
-                {children}
-            </div>
+            <ShopNavbar />
+            {children}
         </SessionProvider>
     )
 }

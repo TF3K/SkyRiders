@@ -15,6 +15,11 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
+import {
+    InputOTP,
+    InputOTPGroup,
+    InputOTPSlot,
+} from "@/components/ui/input-otp"
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FormError } from "../form-error";
@@ -86,11 +91,19 @@ export function LoginForm(){
                                         Code
                                     </FormLabel>
                                     <FormControl>
-                                        <Input 
+                                        <InputOTP 
                                             {...field}
-                                            disabled={isPending}
-                                            placeholder="123456"
-                                        />
+                                            maxLength={6}
+                                        >
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={0} />
+                                                <InputOTPSlot index={1} />
+                                                <InputOTPSlot index={2} />
+                                                <InputOTPSlot index={3} />
+                                                <InputOTPSlot index={4} />
+                                                <InputOTPSlot index={5} />
+                                            </InputOTPGroup>
+                                        </InputOTP>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

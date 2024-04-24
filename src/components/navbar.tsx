@@ -47,7 +47,7 @@ export function NavBar(){
                 </li>
                 <li>
                     <Link href={"/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
-                        Login
+                        Sign in
                     </Link>
                 </li>
                 <ModeToggle />

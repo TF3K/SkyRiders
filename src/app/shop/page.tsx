@@ -1,7 +1,16 @@
+"use client"
+
+import { SessionProvider, useSession } from "next-auth/react";
+
 export default function Shop(){
+    const session = useSession();
+
     return(
-        <div>
-            <h1>Shop</h1>
-        </div>
+        session.status === "authenticated" &&
+        (
+            <div>
+                <h1>Welcome to the shop, {session.data.user.name}</h1>
+            </div>
+        )
     );
 }
