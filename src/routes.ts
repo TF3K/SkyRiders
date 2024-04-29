@@ -29,6 +29,16 @@ export const authRoutes = [
 */
 export const apiAuthPrefix = "/api/auth";
 
+/**
+ * An array of routes that are used to redirect admins to the dashboard
+ * @type {string[]}
+ */
+export const adminRoutes = [
+    "/dashboard",
+    "/dashboard/employee",
+    "/dashboard/profile",
+    "/dashboard/user"
+]
 
 /**
  * The default redirect path after loggin in;

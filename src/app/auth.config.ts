@@ -1,4 +1,4 @@
-import Facebook from 'next-auth/providers/facebook';
+import Github from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 import bcrypt from 'bcrypt';
 import Credentials from "next-auth/providers/credentials";
@@ -11,7 +11,10 @@ export default { providers: [
         clientId: process.env.GOOGLE_ID,
         clientSecret: process.env.GOOGLE_SECRET
     }),
-    Facebook,
+    Github({
+        clientId: process.env.GITHUB_ID,
+        clientSecret: process.env.GITHUB_SECRET
+    }),
     Credentials({
         async authorize(credentials){
             const validatedFields = LoginSchema.safeParse(credentials);
@@ -20,6 +23,7 @@ export default { providers: [
                 const { email, password } = validatedFields.data;
 
                 const user = await getUserByEmail(email);
+                
                 if (!user || !user.password) return null;
                 
                 const passwordsMatch = await bcrypt.compare(
@@ -28,6 +32,7 @@ export default { providers: [
                 )
 
                 if (passwordsMatch) return user;
+                
             }
             return null;
         }

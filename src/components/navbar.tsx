@@ -1,31 +1,15 @@
 "use client"
-import { useTheme } from "next-themes";
-import Image from "next/image";
+
 import Link from "next/link";
 import { ModeToggle } from "./theme/theme-switch";
+import { LogoSwitcher } from "@/lib/logo-switcher";
 
 export function NavBar(){
-    const {theme} = useTheme();
-
-    const logoSwitcher = () =>{
-        // theme === "light"
-        //  ? return Image(BlackMode)
-        //  : return Image(WhiteMode)
-        switch (theme){
-            case "light":
-                return <Image src={"/logo_variants/mono_black.png"} alt="" height={75} width={150} />
-            case "dark":
-                return <Image src={"/logo_variants/mono_white.png"} alt="" height={75} width={150} />
-            default:
-                return <Image src={"/logo_variants/mono_black.png"} alt="" height={75} width={150} />
-        }
-    }
-
     return(
         <div className="flex justify-between h-auto mx-32">
             <div className="flex flex-col order-1 justify-center items-center">
                 <Link href={"/"}>
-                    {logoSwitcher()}
+                    {LogoSwitcher(150,300)}
                     <h1 className="text-2xl tracking-wide font-black text-center">SkyRiders</h1>
                 </Link>
             </div>
