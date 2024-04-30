@@ -24,7 +24,7 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
 
     return(
         <>
-            <Image src="/shop-banner.jpg" className="w-100 h-auto" alt="" width={1500} height={675} />
+            <Image src="/shop-banner.jpg" className="w-sceen h-auto" alt="" width={1500} height={675} />
             <div className="flex flex-wrap justify-center mt-10">
 
                 {products.map((product) => {
