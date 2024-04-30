@@ -3,9 +3,11 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "./theme/theme-switch";
+import { SessionProvider, useSession } from "next-auth/react";
 
 export function NavBar(){
     const {theme} = useTheme();
+    const session = useSession();
 
     const logoSwitcher = () =>{
         // theme === "light"
@@ -45,11 +47,13 @@ export function NavBar(){
                         Shop
                     </Link>
                 </li>
+                {session.status != "authenticated" &&
                 <li>
                     <Link href={"/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
                         Sign in
                     </Link>
                 </li>
+                }
                 <ModeToggle />
             </ul>
         </div>
