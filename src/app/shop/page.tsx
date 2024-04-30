@@ -10,8 +10,7 @@ export default function Shop(){
         session.status === "authenticated" &&
         (
             <div>
-                <ShopNavbar />
-                <h1>Welcome to the shop, {session.data.user.name}</h1>
+                <ShopNavbar imgHref={session.data.user.image} />
             </div>
         )
     );
