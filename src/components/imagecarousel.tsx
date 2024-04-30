@@ -24,8 +24,8 @@ export function ImageCarousel(){
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-amber-50 dark:text-white dark:bg-slate-950"/>
-            <CarouselNext className="bg-amber-50 dark:text-white dark:bg-slate-950"/>
+            <CarouselPrevious className="dark:text-white dark:bg-slate-950"/>
+            <CarouselNext className="dark:text-white dark:bg-slate-950"/>
         </Carousel>
     );
 
