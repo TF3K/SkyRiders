@@ -11,7 +11,7 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
 
     if (searchParams.search && searchParams.search != '') {
         products = await db.product.findMany({where: {
-            name: {
+            productName: {
                 contains: searchParams.search,
                 mode: 'insensitive'
             }
