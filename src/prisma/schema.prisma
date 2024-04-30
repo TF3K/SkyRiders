@@ -6,7 +6,7 @@ datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   // uncomment next line if you use Prisma <5.10
-  directUrl = env("DATABASE_URL_UNPOOLED")
+  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Account {
@@ -86,6 +86,8 @@ model Product {
   description String
   image       String
   createdAt   DateTime @default(now())
+  orders      Order[]
+  downloadVerifications DownloadNotification[]
 }
 
 enum UserRole {
@@ -99,7 +101,7 @@ model Order {
   createdAt         DateTime  @default(now())
   updatedAt         DateTime  @updatedAt
   userId            String
-  productId         String
+  productId         Int
   user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   product           Product   @relation(fields: [productId], references: [id], onDelete: Restrict)
 }
@@ -108,7 +110,7 @@ model DownloadNotification {
   id                String  @id @default(uuid())
   expiresAt         DateTime
   createdAt         DateTime @default(now())
-  productId         String
+  productId         Int
   product           Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 

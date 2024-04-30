@@ -38,9 +38,6 @@ export function ShopNavbar({imgHref}: ShopNavbarProps){
                         Shop
                     </Link>
                 </li>
-                <li className="flex justify-center items-center bg-black text-white dark:bg-white dark:text-black rounded-3xl h-10 w-14">
-                    <ShoppingBasket/>
-                </li>
                 <Link href={"/shop/payout"}>
                     <div className="flex justify-center items-center bg-black text-white dark:bg-white dark:text-black rounded-3xl h-10 w-14">
                         <ShoppingBasket />
