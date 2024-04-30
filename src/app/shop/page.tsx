@@ -1,6 +1,7 @@
 "use client"
 
-import { SessionProvider, useSession } from "next-auth/react";
+import { ShopNavbar } from "@/components/shop/shop-navbar";
+import { useSession } from "next-auth/react";
 
 export default function Shop(){
     const session = useSession();
@@ -9,6 +10,7 @@ export default function Shop(){
         session.status === "authenticated" &&
         (
             <div>
+                <ShopNavbar />
                 <h1>Welcome to the shop, {session.data.user.name}</h1>
             </div>
         )

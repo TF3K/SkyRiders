@@ -34,6 +34,26 @@ export const RegisterSchema = z.object({
     })
 })
 
+export const PayoutSchema = z.object({
+    cardNumber: z.string().min(8, {
+        message: " Card Number must be at least 8 characters.",
+    }).max(19, {
+        message: "Card Number cannot exceed 4 characters.",
+    }),
+
+    expireDate: z.date().refine((value) => {
+        return value instanceof Date && !isNaN(value.getTime());
+    }, {
+        message: "Invalid expire date format or value.",
+    }),
+
+    securityCode: z.string().min(3, {
+        message: "Security code must be at least 3 characters.",
+    }).max(4, {
+        message: "Security code cannot exceed 4 characters.",
+    }),
+})
+
 export const profileSchema = z.object({
     firstname: z
         .string()

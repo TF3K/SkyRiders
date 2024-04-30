@@ -29,7 +29,7 @@ export function Social(){
             variant={"outline"}
             onClick={() => onClick("github")}
             >
-                <FaGithub className="h-6 w-6 text-blue-600" />
+                <FaGithub className="h-6 w-6" />
             </Button>
         </div>
     )
