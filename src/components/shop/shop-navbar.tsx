@@ -43,7 +43,7 @@ export function ShopNavbar({imgHref}: ShopNavbarProps){
                     </div>
                 </Link>
                 <ModeToggle />
-                <ShopAvatar imgHref={imgHref} />
+                <ShopAvatar imgHref={imgHref}/>
             </ul>
         </div>
     );
