@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -32,11 +26,6 @@ model Account {
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([provider, providerAccountId])
-}
-
-enum UserRole {
-  ADMIN
-  USER
 }
 
 model User {
@@ -84,25 +73,24 @@ model TwoFactorToken {
 
 model TwoFactorConfirmation {
   id     String @id @default(cuid())
-  userId String
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([userId])
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Product {
-  id          String     @id @default(uuid())
-  productName String?
-  filePath    String
-  imagePath   String
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Float
+  category    String
+  inStock     Boolean
   description String
-  quantity    Int
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  outOfStock  Boolean
-  orders      Order[]
-  downloadVerifications DownloadNotification[]
+  image       String
+  createdAt   DateTime @default(now())
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }
 
 model Order {

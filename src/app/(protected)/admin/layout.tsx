@@ -2,13 +2,13 @@
 
 import { ShopNavbar } from "@/components/shop/shop-navbar";
 import { SessionProvider } from "next-auth/react";
-import {Footer} from "@/components/footer";
+import {NavBar} from "@/components/navbar";
 
-export default function ShopLayout({children}: {children: React.ReactNode}){
+export default function AdminLayout({children}: {children: React.ReactNode}){
     return (
         <SessionProvider>
+            <NavBar />
             {children}
-            <Footer />
         </SessionProvider>
     )
 }
