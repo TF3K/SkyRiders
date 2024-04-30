@@ -78,7 +78,7 @@ model TwoFactorConfirmation {
 
 model Product {
   id          Int      @id @default(autoincrement())
-  name        String
+  productName String
   price       Float
   category    String
   inStock     Boolean
