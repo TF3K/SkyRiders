@@ -8,10 +8,9 @@ import {
 
 interface ShopAvatarProps {
     imgHref?: string,
-    fallback?: string
 }
 
-export const ShopAvatar = ({imgHref, fallback}: ShopAvatarProps) => {
+export const ShopAvatar = ({imgHref}: ShopAvatarProps) => {
     return (
         <Avatar>
             <AvatarImage src={imgHref} alt="user avatar" />
