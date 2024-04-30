@@ -16,7 +16,10 @@ export function Product(props: {
             <Link href={`/shop/product/${props.data.id}`}>
                 <Image className="h-48 w-full object-cover object-end"
                     src={props.data.image}
-                    alt="Home in Countryside"/>
+                    alt="Home in Countryside"
+                    width={1500}
+                    height={675}
+                    />
                 <div className="p-6">
                     <div className="flex items-baseline">
                         <span
