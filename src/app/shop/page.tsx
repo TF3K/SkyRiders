@@ -1,5 +1,6 @@
 import {Product} from "@/components/shop/product";
 import { db } from "@/lib/db";
+import Image from "next/image"
 
 
 export default async function Shop({searchParams}: {searchParams: {search: string}}){
@@ -23,7 +24,7 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
 
     return(
         <>
-            <img src="/shop-banner.jpg" className="w-100 h-auto" alt=""/>
+            <Image src="/shop-banner.jpg" className="w-100 h-auto" alt=""/>
             <div className="flex flex-wrap justify-center mt-10">
 
                 {products.map((product) => {

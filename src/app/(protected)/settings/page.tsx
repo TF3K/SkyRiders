@@ -4,10 +4,10 @@ export default async function SettingsPage(){
     const session = await auth();
     console.log(session);
 
-    return <>
+    return (<>
         <div>
             <p>Setting page</p>
             {JSON.stringify(session)}
         </div>
-    </>;
+    </>);
 }

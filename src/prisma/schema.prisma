@@ -41,7 +41,6 @@ model User {
   updatedAt       DateTime               @updatedAt
   isTwoFacEnabled Boolean                @default(false)
   TwoFacConfirm   TwoFactorConfirmation?
-  orders          Order[]
 }
 
 model VerificationToken {
@@ -91,25 +90,6 @@ model Product {
 enum UserRole {
   ADMIN
   USER
-}
-
-model Order {
-  id                String    @id @default(uuid())
-  pricePaidInCents  Int
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
-  userId            String
-  productId         String
-  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  product           Product   @relation(fields: [productId], references: [id], onDelete: Restrict)
-}
-
-model DownloadNotification {
-  id                String  @id @default(uuid())
-  expiresAt         DateTime
-  createdAt         DateTime @default(now())
-  productId         String
-  product           Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model StripeCustomer {

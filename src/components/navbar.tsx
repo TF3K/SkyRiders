@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { ModeToggle } from "./theme/theme-switch";
-import { SessionProvider, useSession } from "next-auth/react";
 import { LogoSwitcher } from "@/lib/logo-switcher";
 
 export function NavBar(){
-    const session = useSession();
     return(
         <div className="flex justify-between h-auto mx-32">
             <div className="flex flex-col order-1 justify-center items-center">
@@ -31,13 +29,11 @@ export function NavBar(){
                         Shop
                     </Link>
                 </li>
-                {session.status != "authenticated" &&
                 <li>
                     <Link href={"/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
                         Sign in
                     </Link>
                 </li>
-                }
                 <ModeToggle />
             </ul>
         </div>
