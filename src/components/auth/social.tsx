@@ -1,13 +1,13 @@
 "use client"
 
 import { FcGoogle } from "react-icons/fc"
-import { FaFacebook } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 import { Button } from "../ui/button"
 import { signIn } from "next-auth/react"
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
 
 export function Social(){
-    const onClick = (provider: "google" | "facebook") => {
+    const onClick = (provider: "google" | "github") => {
         signIn(provider,{
             callbackUrl: DEFAULT_LOGIN_REDIRECT
         });
@@ -27,9 +27,9 @@ export function Social(){
             size={"lg"}
             className="w-full"
             variant={"outline"}
-            onClick={() => onClick("facebook")}
+            onClick={() => onClick("github")}
             >
-                <FaFacebook className="h-6 w-6 text-blue-600" />
+                <FaGithub className="h-6 w-6" />
             </Button>
         </div>
     )

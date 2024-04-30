@@ -21,8 +21,6 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
     }
 
 
-
-
     return(
         <>
             <img src="/shop-banner.jpg" className="w-100 h-auto" alt=""/>

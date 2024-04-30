@@ -29,7 +29,7 @@ import Link from "next/link";
 
 export function LoginForm(){
     const searchParams = useSearchParams();
-    const urlError = searchParams.get("error") === "OAithAccountNotLined" ? "Email already in use" : "";
+    const urlError = searchParams.get("error") === "OAuthAccountNotLikned" ? "Email already in use" : "";
 
     const [showTwoFac, setShowTwoFac] = useState(false);
     const [error,setError] = useState<string | undefined>("");

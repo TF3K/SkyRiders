@@ -3,8 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Account {
@@ -34,11 +36,12 @@ model User {
   image           String?
   password        String?
   role            UserRole               @default(USER)
+  accounts        Account[]
   createdAt       DateTime               @default(now())
   updatedAt       DateTime               @updatedAt
   isTwoFacEnabled Boolean                @default(false)
-  accounts        Account[]
   TwoFacConfirm   TwoFactorConfirmation?
+  orders          Order[]
 }
 
 model VerificationToken {
@@ -88,4 +91,32 @@ model Product {
 enum UserRole {
   ADMIN
   USER
+}
+
+model Order {
+  id                String    @id @default(uuid())
+  pricePaidInCents  Int
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  userId            String
+  productId         String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product           Product   @relation(fields: [productId], references: [id], onDelete: Restrict)
+}
+
+model DownloadNotification {
+  id                String  @id @default(uuid())
+  expiresAt         DateTime
+  createdAt         DateTime @default(now())
+  productId         String
+  product           Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model StripeCustomer {
+  id               String @id @default(uuid())
+  userId           String @unique
+  stripeCustomerId String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
