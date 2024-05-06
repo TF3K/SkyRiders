@@ -4,29 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook,faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { LogoSwitcher } from "@/lib/logo-switcher";
 
 export function Footer(){
-    const {theme} = useTheme();
-
-    const logoSwitcher = () =>{
-        // theme === "light"
-        //  ? return Image(BlackMode)
-        //  : return Image(WhiteMode)
-        switch (theme){
-            case "light":
-                return <Image src={"/logo_variants/mono_black.png"} alt="" height={15} width={40} />
-            case "dark":
-                return <Image src={"/logo_variants/mono_white.png"} alt="" height={15} width={40} />
-            default:
-                return <Image src={"/logo_variants/mono_black.png"} alt="" height={15} width={40} />
-        }
-    }
     return(
         <footer className="flex justify-center items-center w-full mt-96 space-x-2 mb-16">
             <div className="flex flex-col justify-center items-center">
                 <div className="flex">
                     <Link href={"/"}>
-                        {logoSwitcher()}
+                        {LogoSwitcher(30,80)}
                     </Link>
                     <h2 className=" text-lg">SkyRiders inc. &copy;, All rights reserved</h2>
                 </div>

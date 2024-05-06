@@ -36,8 +36,9 @@ export const apiAuthPrefix = "/api/auth";
 export const adminRoutes = [
     "/dashboard",
     "/dashboard/employee",
-    "/dashboard/profile",
-    "/dashboard/user"
+    "/dashboard/notify",
+    "/dashboard/user",
+    "/dashboard/events"
 ]
 
 /**

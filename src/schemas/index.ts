@@ -34,6 +34,13 @@ export const RegisterSchema = z.object({
     })
 })
 
+export const NotificationSchema = z.object({
+    title: z.string().min(1, {
+        message: "You must specify a title for the notification",
+    }),
+    description: z.optional(z.string())
+})
+
 export const PayoutSchema = z.object({
     cardNumber: z.string().min(8, {
         message: " Card Number must be at least 8 characters.",

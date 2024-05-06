@@ -31,5 +31,13 @@ export const sendVerificationEmail = async (email:string, token:string) => {
         subject: "Confirm your email",
         html: `<p>Click <a href="${confirmLink}">here</a></p>`
     })
+}
 
+export const sendNotificationEmail = async (title: string, description: string) => {
+    await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: "azizmokni10@gmail.com",
+        subject: title,
+        html: `<p>${description}</p>`
+    })
 }

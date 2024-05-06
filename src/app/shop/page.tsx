@@ -1,12 +1,10 @@
+import { Footer } from "@/components/footer";
 import {Product} from "@/components/shop/product";
+import { ShopNavbar } from "@/components/shop/shop-navbar";
 import { db } from "@/lib/db";
 import Image from "next/image"
 
-
 export default async function Shop({searchParams}: {searchParams: {search: string}}){
-
-    console.log('----------------------- ', searchParams.search);
-
     let products: any[] = [];
 
     if (searchParams.search && searchParams.search != '') {
@@ -20,26 +18,29 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
     } else {
         products = await db.product.findMany();
     }
-
+    
 
     return(
         <>
-            <Image src="/shop-banner.jpg" className="w-sceen h-auto" alt="" width={1500} height={675} />
-            <div className="flex flex-wrap justify-center mt-10">
-
+        <ShopNavbar />
+        <div className="flex flex-col justify-center items-center mt-4">
+            <Image src="/shop-banner.jpg" className="w-[90%] h-auto" alt="" width={1500} height={675} />
+            <div className="flex flex-wrap w-[90%] justify-center mt-16 -mb-64">
                 {products.map((product) => {
-                    return <>
-                        <Product data={product}></Product>
-                    </>;
+                    return (
+                        <>
+                            <Product data={product}></Product>
+                        </>
+                    );
                 })}
                 {products.length == 0 &&
-                    <div>
+                    (<div>
                         <h1>Product not found!</h1>
-                    </div>
+                    </div>)
                 }
-
             </div>
-
+        </div>
+        <Footer />
         </>
     );
 }

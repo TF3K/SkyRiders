@@ -1,5 +1,4 @@
-import { Icons } from "@/components/icons";
-import { NavItem, SidebarNavItem } from "@/types";
+import { NavItem } from "@/types";
 
 export type User = {
   id: number;
@@ -131,10 +130,10 @@ export const navItems: NavItem[] = [
     label: "employee",
   },
   {
-    title: "Profile",
-    href: "/dashboard/profile",
-    icon: "profile",
-    label: "profile",
+    title: "Notify",
+    href: "/dashboard/notify",
+    icon: "bell",
+    label: "notify"
   },
   {
     title: "Login",

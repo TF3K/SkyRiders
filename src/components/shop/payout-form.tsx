@@ -59,6 +59,7 @@ export function PayoutForm() {
             backButtonLabel="Keep shopping"
             backButtonHref="/shop"
         >
+            {!success && !error && (
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <div className="space-y-4">
@@ -104,8 +105,6 @@ export function PayoutForm() {
                         )}
                         />
                     </div>
-                <FormError message={error} />
-                <FormSuccess message={success} />
                 <Button 
                     type="submit"
                     disabled={isPending}
@@ -113,6 +112,11 @@ export function PayoutForm() {
                 >Checkout</Button>
                 </form>
             </Form>
+            )}
+            <FormError message={error} />
+            {!success && (
+                <FormSuccess message={success} />
+            )}
         </CardWrapper>
     )
 }

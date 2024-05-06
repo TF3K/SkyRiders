@@ -3,7 +3,7 @@
 import { useTheme as useThemeSwitcher } from "next-themes";
 import Image from "next/image";
 
-export const LogoSwitcher = (width: number, height: number) =>{
+export const LogoSwitcher = (width: number, height: number) => {
         const {theme} = useThemeSwitcher();
         // theme === "light"
         //  ? <Image src={BlackMode} alt="" height={height} width={width} />

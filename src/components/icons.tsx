@@ -29,6 +29,7 @@ import {
   User2Icon,
   UserX2Icon,
   X,
+  Bell
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -79,4 +80,5 @@ export const Icons = {
   ),
   twitter: Twitter,
   check: Check,
+  bell: Bell
 };

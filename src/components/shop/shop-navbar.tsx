@@ -1,17 +1,16 @@
 "use client"
 
 import Link from "next/link";
-import { ShoppingBasket } from "lucide-react";
+import { BellIcon, ShoppingBasket } from "lucide-react";
 import { SearchBar } from "./search-bar";
 import { LogoSwitcher } from "@/lib/logo-switcher";
 import { ModeToggle } from "../theme/theme-switch";
-import { ShopAvatar } from "./shop-avatar";
+import { Button } from "../ui/button";
+import { UserNav } from "../layout/user-nav";
 
-interface ShopNavbarProps {
-    imgHref?: string
-}
+export function ShopNavbar(){
 
-export function ShopNavbar({imgHref}: ShopNavbarProps){
+
     return(
         <div className="flex justify-between h-auto mx-32">
             <div className="flex flex-col order-1 justify-center items-center">
@@ -21,30 +20,18 @@ export function ShopNavbar({imgHref}: ShopNavbarProps){
                 </Link>
             </div>
             <SearchBar className="order-2" />
-            <ul className="flex order-3 font-semibold text-xl justify-center items-center space-x-4">
-                <li>
-                    <Link href={"/"}>
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link href={"/"}>
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link href={"/shop"}>
-                        Shop
-                    </Link>
-                </li>
+            <div className="flex order-3 font-semibold text-xl justify-center items-center space-x-4">
                 <Link href={"/shop/payout"}>
                     <div className="flex justify-center items-center bg-black text-white dark:bg-white dark:text-black rounded-3xl h-10 w-14">
                         <ShoppingBasket />
                     </div>
                 </Link>
+                <Button onClick={()=> {}}>
+                    <BellIcon />
+                </Button>
                 <ModeToggle />
-                <ShopAvatar imgHref={imgHref}/>
-            </ul>
+                <UserNav />
+            </div>
         </div>
     );
 }

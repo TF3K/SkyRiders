@@ -12,19 +12,23 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { signOut, useSession } from "next-auth/react";
+
 export function UserNav() {
   const { data: session } = useSession();
+  const username = session?.user?.name?.[0] as string
+  const capitalizedName = username?.[0]?.toUpperCase() ?? "";
+  
   if (session) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-            <Avatar className="h-8 w-8">
+            <Avatar className="h-10 w-10">
               <AvatarImage
                 src={session.user?.image ?? ""}
                 alt={session.user?.name ?? ""}
               />
-              <AvatarFallback>{session.user?.name?.[0]}</AvatarFallback>
+              <AvatarFallback>{capitalizedName}</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>

@@ -1,6 +1,6 @@
 "use client"
 
-import ThemeToggle from "@/components/layout/ThemeToggle/theme-toggle";
+import { ModeToggle } from "@/components/theme/theme-switch";
 import { cn } from "@/lib/utils";
 import { MobileSidebar } from "./mobile-sidebar";
 import { UserNav } from "./user-nav";
@@ -13,7 +13,7 @@ export default function Header() {
       <nav className="h-14 flex items-center justify-between px-4">
         <div className="hidden lg:block">
           <Link
-            href={"https://github.com/Kiranism/next-shadcn-dashboard-starter"}
+            href={"/"}
             target="_blank"
           >
             {LogoSwitcher(80,96)}
@@ -25,7 +25,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <UserNav />
-          <ThemeToggle />
+          <ModeToggle />
         </div>
       </nav>
     </div>
