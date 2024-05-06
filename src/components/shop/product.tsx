@@ -12,7 +12,7 @@ export function Product(props: {
 }) {
     return (
 
-        <div className="bg-white rounded-lg overflow-hidden shadow-2xl xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 mx-5 mb-10">
+        <div className="bg-white rounded-lg overflow-hidden shadow-2xl xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 mx-5 mb-10 rounded-b-[1.5rem]">
             <Link href={`/shop/product/${props.data.id}`}>
                 <Image className="h-48 w-full object-cover object-end"
                     src={props.data.image}
@@ -23,8 +23,8 @@ export function Product(props: {
                 <div className="p-6">
                     <div className="flex items-baseline">
                         <span
-                            className="inline-block bg-teal-200 text-teal-800 py-1 px-4 text-xs rounded-full uppercase font-semibold tracking-wide">New</span>
-                        <div className="ml-2 text-gray-600 text-xs uppercase font-semibold tracking-wide">
+                            className="inline-block bg-teal-200 text-teal-800 py-1 px-4 text-xs rounded-full uppercase font-semibold tracking-wide hover:underline">New</span>
+                        <div className="ml-2 text-gray-600 text-xs uppercase font-semibold tracking-wide hover:underline">
                             {props.data.category}
                         </div>
                     </div>

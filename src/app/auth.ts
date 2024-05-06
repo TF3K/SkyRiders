@@ -52,7 +52,7 @@ export const {handlers: {GET, POST}, signIn, signOut, auth} = NextAuth(
                 token.role = existingUser.role;
 
                 return token;
-            }
+            },
         },
         adapter: PrismaAdapter(db),
         secret: process.env.AUTH_SECRET,

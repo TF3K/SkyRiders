@@ -25,11 +25,6 @@ export function NavBar(){
                     </Link>
                 </li>
                 <li>
-                    <Link href={"/shop"}>
-                        Shop
-                    </Link>
-                </li>
-                <li>
                     <Link href={"/auth/login"} className="bg-black text-white dark:bg-white dark:text-black rounded-3xl h-8 p-4">
                         Sign in
                     </Link>

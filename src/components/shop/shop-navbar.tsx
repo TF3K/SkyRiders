@@ -1,15 +1,13 @@
 "use client"
 
 import Link from "next/link";
-import { BellIcon, ShoppingBasket } from "lucide-react";
+import { ShoppingBasket } from "lucide-react";
 import { SearchBar } from "./search-bar";
 import { LogoSwitcher } from "@/lib/logo-switcher";
 import { ModeToggle } from "../theme/theme-switch";
-import { Button } from "../ui/button";
 import { UserNav } from "../layout/user-nav";
 
 export function ShopNavbar(){
-
 
     return(
         <div className="flex justify-between h-auto mx-32">
@@ -26,9 +24,6 @@ export function ShopNavbar(){
                         <ShoppingBasket />
                     </div>
                 </Link>
-                <Button onClick={()=> {}}>
-                    <BellIcon />
-                </Button>
                 <ModeToggle />
                 <UserNav />
             </div>
