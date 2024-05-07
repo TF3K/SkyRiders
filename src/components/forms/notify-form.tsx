@@ -54,7 +54,7 @@ export default function NotifyForm() {
 
     return (
     <>
-        <Heading title={"Send a notification"} description={"what would you like to notify your users"} />
+        <Heading title={"Send a notification"} description={"What would you like to notify your users"} />
         <Separator />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">

@@ -13,8 +13,8 @@ export default async function Shop({searchParams}: {searchParams: {search: strin
                 contains: searchParams.search,
                 mode: 'insensitive'
             }
-            }
-        });
+        }
+    });
     } else {
         products = await db.product.findMany();
     }

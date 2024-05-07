@@ -3,7 +3,7 @@ import { ImageCarousel } from '@/components/imagecarousel'
 export function About(){
         return(
             <div className="flex justify-center items-center w-full mt-72">
-                <div className="flex justify-between items-center w-[90%] px-48">
+                <div className="flex justify-between items-center w-[90%] px-32">
                     <div className="flex-col order-1 w-[40rem]">
                         <h1 className="text-5xl font-bold underline">What we do</h1>
                         <p className="text-2xl font-semibold leading-9 mt-4">                        
