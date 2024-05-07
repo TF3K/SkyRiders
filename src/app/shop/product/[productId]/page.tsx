@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer";
+import { ShopNavbar } from "@/components/shop/shop-navbar";
 import { db } from "@/lib/db";
 import Image from "next/image";
 import {notFound} from "next/navigation";
@@ -17,9 +19,10 @@ export default async function ProductPage({params} : {
         notFound();
     }
 
-    return <>
-        <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-800 py-8">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    return (<>
+        <ShopNavbar />
+        <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-800 py-12 mt-24 -mb-48">
+            <div className="max-w-6xl flex justify-between items-center mx-auto">
                 <div className="flex flex-col md:flex-row -mx-4">
                     <div className="md:flex-1 px-4">
                         <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
@@ -70,5 +73,7 @@ export default async function ProductPage({params} : {
                 </div>
             </div>
         </div>
-    </>;
+        <Footer />
+    </>)
+    ;
 }

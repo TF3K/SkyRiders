@@ -8,7 +8,6 @@ import { ModeToggle } from "../theme/theme-switch";
 import { UserNav } from "../layout/user-nav";
 
 export function ShopNavbar(){
-
     return(
         <div className="flex justify-between h-auto mx-32">
             <div className="flex flex-col order-1 justify-center items-center">
